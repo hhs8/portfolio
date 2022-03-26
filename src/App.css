@@ -18,11 +18,10 @@
   }
 }
 
-.App-header {
+.App-content {
   background-color: #161618;
   height: 100%;
   padding-top: 50px;
-  overflow-y: auto;
   /* min-height: 100vh;
   display: flex;
   flex-direction: column; */
@@ -78,8 +77,11 @@ button {
 
 .tab-border-left {
   border-left: 1px solid #505050;
+  border-radius: 10px 0 0 0;
 }
 
 .tab-border-right {
   border-right: 1px solid #505050;
+  border-top: 1px solid #505050;
+  /* border-radius: 10px; */
 }
