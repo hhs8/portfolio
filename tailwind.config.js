@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       colors: {
         transparent: "transparent",
+        "light-canvas": "#e5e5e5",
+        "dark-canvas": "#161616",
         "apple-close": "#fd6456",
         "apple-min": "#fcbe36",
         "apple-zoom": "#53cb43",
