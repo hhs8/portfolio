@@ -6,6 +6,12 @@ const sizes: { [key: string]: number } = {
   lg: 8,
 };
 
+const sizeClass: { [key: string]: string } = {
+  sm: "h-5 w-10",
+  base: "h-6 w-12",
+  lg: "h-8 w-16",
+};
+
 export default function ToggleSwitch(props: {
   label: string;
   size: string;
@@ -24,7 +30,7 @@ export default function ToggleSwitch(props: {
   const inputClass = () => {
     return (
       "bg-gray-300 bg-no-repeat bg-contain rounded-full appearance-none cursor-pointer toggle-switch-input " +
-      ` h-${size} w-${size * 2} `
+      sizeClass[props.size]
     );
   };
 

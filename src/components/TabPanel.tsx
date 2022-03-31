@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tab } from "./Tab";
 import { ThemeButton } from "./ThemeButton";
-import { tabs, colors, flairs } from "../data/data";
+import { tabs } from "../data/data";
 import Favicon from "../favicon.svg";
 
 function TabPanel(props: { tabChange: Function }) {
@@ -19,13 +19,11 @@ function TabPanel(props: { tabChange: Function }) {
         src={Favicon}
       />
       <div className="flex-1" />
-      {colors.map((color, idx) => {
+      {tabs.map((tab, idx) => {
         return (
           <Tab
             index={idx}
-            name={tabs[idx]}
-            color={color}
-            flair={flairs[idx]}
+            name={tab}
             key={idx}
             active={curTab == idx}
             onClick={tabChange}
