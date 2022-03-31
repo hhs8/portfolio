@@ -7,74 +7,40 @@
   font-family: 'Inter', sans-serif;
 }
 
-.App::-webkit-scrollbar {
+.App.show-scrollbar::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-.App::-webkit-scrollbar-track {
-  border-radius: 2px;
-  /* background: #f7f4ed; */
-  background: #202020;
+.App.show-scrollbar::-webkit-scrollbar-track,
+.App.show-scrollbar::-webkit-scrollbar-thumb {
+  visibility: hidden;
 }
 
-.App::-webkit-scrollbar-thumb {
-  /* background: #e0cbcb;
-  border: 3px solid #f6f7ed; */
+.App.show-scrollbar:hover::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background: #202020;
+  visibility: visible;
+}
+
+.App.show-scrollbar:hover::-webkit-scrollbar-thumb {
   background: #505050;
   border-radius: 2px;
+  visibility: visible;
 }
 
-.App::-webkit-scrollbar-thumb:hover {
-  /* background: #c0a0b9; */
+.App.show-scrollbar:hover::-webkit-scrollbar-thumb:hover {
   background: #808080;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  margin: auto;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  visibility: visible;
 }
 
 .App-content {
   height: 100%;
-  padding-top: 50px;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 button {
   font-size: calc(10px + 2vmin);
-}
-
-.TabPanel {
-  /* background: rgb(58, 100, 192); */
-  /* padding: 10px; */
-  color: white;
-  font-weight: bolder;
-}
-
-.mac-os-buttons {
-  width: 1.1rem;
-  height: 1.1rem;
 }
