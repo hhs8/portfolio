@@ -1,3 +1,11 @@
+import { IconType } from "react-icons";
+import {
+  FcManager,
+  FcStatistics,
+  FcSurvey,
+  FcTwoSmartphones,
+} from "react-icons/fc";
+
 import {
   textColors,
   hoverStyles,
@@ -10,13 +18,13 @@ interface TabProps {
   index: number;
   name: string;
   active: boolean;
-  onClick: Function;
+  onClick: (index: number) => void;
 }
 
 function Tab(props: TabProps) {
   const textClass = () => {
     const textStyle =
-      "p-2 font-medium text-left cursor-pointer md:p-4 whitespace-nowrap ";
+      "p-2 font-medium text-left cursor-pointer md:p-4 whitespace-nowrap flex items-center ";
     const activeStyle = props.active
       ? textColors[props.index] + " underline "
       : " text-gray-700 dark:text-gray-300 ";
@@ -41,6 +49,18 @@ function Tab(props: TabProps) {
     }
   };
 
+  const flairIcons: { [key: number]: IconType } = {
+    0: FcManager,
+    1: FcStatistics,
+    2: FcSurvey,
+    3: FcTwoSmartphones,
+  };
+
+  function RenderFlair() {
+    const Flair = flairIcons[props.index];
+    return <Flair className="text-base md:text-lg lg:text-xl" />;
+  }
+
   return (
     <div
       tabIndex={0}
@@ -48,9 +68,8 @@ function Tab(props: TabProps) {
       onClick={tabChange}
       onKeyPress={keyTabChange}
     >
-      <span className="text-base md:text-lg lg:text-xl">
-        {flairs[props.index]}
-      </span>
+      {/* {RenderFlair()} */}
+      <img src={flairs[props.index]} width={24} height={24} />
       <span className="hidden lg:inline">&nbsp;</span>
       <span className="hidden text-xs md:inline md:text-base lg:text-lg">
         {props.name}

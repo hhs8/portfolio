@@ -1,3 +1,8 @@
+import phone from "../data/phone.png";
+import blueprint from "../data/blueprint.png";
+import work from "../data/work.png";
+import workstation from "../data/workstation.png";
+
 const tabs = [
   "About", //life, education & techstack
   "Career",
@@ -13,6 +18,6 @@ const darkHoverStyles = ["dark:hover:text-apple-close", "dark:hover:text-apple-m
 
 const decorations = ["decoration-apple-close", "decoration-apple-min", "decoration-apple-zoom", "decoration-indigo-500"];
 
-const flairs = ["🙋‍♂️", "🖥️", "📋", "📱"];
+const flairs = [work, workstation, blueprint, phone];
 
 export { tabs, textColors, hoverStyles, darkHoverStyles, decorations, flairs }
