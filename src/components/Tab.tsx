@@ -1,17 +1,10 @@
-import { IconType } from "react-icons";
-import {
-  FcManager,
-  FcStatistics,
-  FcSurvey,
-  FcTwoSmartphones,
-} from "react-icons/fc";
-
+import { useState } from "react";
 import {
   textColors,
   hoverStyles,
   darkHoverStyles,
-  decorations,
   flairs,
+  bottomBorders,
 } from "../data/data";
 
 interface TabProps {
@@ -21,22 +14,27 @@ interface TabProps {
   onClick: (index: number) => void;
 }
 
-function Tab(props: TabProps) {
+export const Tab = (props: TabProps) => {
+  const [hover, setHover] = useState(false);
+
   const textClass = () => {
     const textStyle =
-      "p-2 font-medium text-left cursor-pointer md:p-4 whitespace-nowrap flex items-center ";
+      "p-2 font-medium text-left cursor-pointer whitespace-nowrap flex items-center ";
+
     const activeStyle = props.active
-      ? textColors[props.index] + " underline "
+      ? textColors[props.index] + " border-b-4 "
       : " text-gray-700 dark:text-gray-300 ";
 
     const colors = ` ${hoverStyles[props.index]} ${
       darkHoverStyles[props.index]
-    } ${decorations[props.index]}  `;
+    } ${bottomBorders[props.index]} `;
 
-    const decoration =
-      " hover:underline underline-offset-8 decoration-2 duration-300 ease-in-out";
-
-    return textStyle + activeStyle + colors + decoration;
+    return (
+      textStyle +
+      activeStyle +
+      colors +
+      " transition-colors duration-300 ease-linear hover:border-b-4"
+    );
   };
 
   const tabChange = () => {
@@ -49,17 +47,13 @@ function Tab(props: TabProps) {
     }
   };
 
-  const flairIcons: { [key: number]: IconType } = {
-    0: FcManager,
-    1: FcStatistics,
-    2: FcSurvey,
-    3: FcTwoSmartphones,
+  const tooltipClass = () => {
+    const style = hover ? "block" : "hidden";
+    return (
+      style +
+      " md:hidden absolute top-9 -left-4 text-slate-50 dark:text-slate-900 text-sm font-normal bg-dark-canvas dark:bg-light-canvas rounded-lg py-1 px-2 opacity-70"
+    );
   };
-
-  function RenderFlair() {
-    const Flair = flairIcons[props.index];
-    return <Flair className="text-base md:text-lg lg:text-xl" />;
-  }
 
   return (
     <div
@@ -67,15 +61,20 @@ function Tab(props: TabProps) {
       className={textClass()}
       onClick={tabChange}
       onKeyPress={keyTabChange}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      {/* {RenderFlair()} */}
-      <img src={flairs[props.index]} width={24} height={24} />
+      <div className="relative">
+        <img
+          src={flairs[props.index]}
+          className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 "
+        />
+        <span className={tooltipClass()}>{props.name}</span>
+      </div>
       <span className="hidden lg:inline">&nbsp;</span>
       <span className="hidden text-xs md:inline md:text-base lg:text-lg">
         {props.name}
       </span>
     </div>
   );
-}
-
-export { Tab };
+};

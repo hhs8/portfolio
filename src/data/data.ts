@@ -16,8 +16,11 @@ const hoverStyles = ["hover:text-apple-close", "hover:text-apple-min", "hover:te
 
 const darkHoverStyles = ["dark:hover:text-apple-close", "dark:hover:text-apple-min", "dark:hover:text-apple-zoom", "dark:hover:text-indigo-500"];
 
-const decorations = ["decoration-apple-close", "decoration-apple-min", "decoration-apple-zoom", "decoration-indigo-500"];
+//replaced with bottomBorders
+// const decorations = ["decoration-apple-close", "decoration-apple-min", "decoration-apple-zoom", "decoration-indigo-500"];
+
+const bottomBorders = ["border-b-apple-close", "border-b-apple-min", "border-b-apple-zoom", "border-b-indigo-500"];
 
 const flairs = [work, workstation, blueprint, phone];
 
-export { tabs, textColors, hoverStyles, darkHoverStyles, decorations, flairs }
+export { tabs, textColors, hoverStyles, darkHoverStyles, bottomBorders, flairs }

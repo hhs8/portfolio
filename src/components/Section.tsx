@@ -1,43 +1,56 @@
-import { ReactElement, useEffect, useRef } from "react";
-import { hoverStyles } from "../data/data";
+import { ReactElement, useEffect, useRef, useState } from "react";
+import { tabs, textColors, hoverStyles } from "../data/data";
 
 interface SectionProp {
-  id: string;
   index: number;
   cur: number;
   children: ReactElement | ReactElement[];
 }
 
 function Section(props: SectionProp) {
+  const [hover, setHover] = useState(false);
+
   useEffect(() => {
     if (props.index == props.cur) {
       scrollToRef();
     }
   }, [props.cur]);
 
-  const myRef = useRef<null | HTMLDivElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
 
   const scrollToRef = () => {
-    myRef?.current?.scrollIntoView();
+    divRef.current?.scrollIntoView();
   };
 
   const sectionClass = () => {
-    const alignment =
-      props.index % 2 == 0 ? "text-left float-left" : "text-right float-right";
-    return "w-3/4 text-2xl my-3 pt-16 " + alignment;
+    const alignment = props.index % 2 == 0 ? "float-left" : "float-right";
+    return "text-left text-2xl my-3 pt-16 " + alignment;
   };
 
   const h1Class = () => {
+    const mouseOnSection = hover ? textColors[props.index] : "";
     return (
-      "my-2 text-4xl font-bold uppercase text-gray-500 ease-in-out duration-500 " +
+      "my-2 text-4xl font-bold uppercase text-gray-500 ease-linear duration-300 " +
+      mouseOnSection +
+      " " +
       hoverStyles[props.index]
     );
   };
 
+  const renderH1 = () => {
+    if (props.index != 10) {
+      return <h1 className={h1Class()}>{tabs[props.index]}</h1>;
+    }
+    return <></>;
+  };
+
   return (
-    <section>
-      <div id={props.id} ref={myRef} className={sectionClass()}>
-        <h1 className={h1Class()}>{props.id}</h1>
+    <section
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <div ref={divRef} className={sectionClass()}>
+        {renderH1()}
         <div className="my-4">{props.children}</div>
       </div>
     </section>
