@@ -1,5 +1,5 @@
 .Landing-banner {
-  font-size: calc(60px + 10vmin);
+  font-size: calc(60px + 5vmin);
   font-weight: 700;
   font-family: 'Inter', sans-serif;
   animation-name: landing;

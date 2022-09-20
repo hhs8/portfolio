@@ -33,10 +33,11 @@ function App() {
             <Section index={0} cur={curTab}>
               <div>
                 <p className="my-4">
-                  Hi, I'm Honsing, a Fullstack Software Developer. I studied in
-                  Computer Science. This is my personal website where I talk a
-                  little bit about myself, and as a platform to showcase my
-                  skillsets and perhaps demonstrate my abilities.
+                  Hi, I'm Honsing, a Fullstack Software Developer based in
+                  Malaysia. I studied in Computer Science. This is my personal
+                  website where I talk a little bit about myself, and as a
+                  platform to showcase my skillsets and perhaps demonstrate my
+                  abilities.
                 </p>
                 <p className="my-4">
                   You can ask me all sorts of questions, and probably I have an
@@ -182,10 +183,10 @@ function App() {
               <div className="flex items-center my-2">
                 <FaGithub className="mr-4 duration-200 ease-in dark:text-white text-slate-900" />
                 <a
-                  href="https://github.com/hexshark"
+                  href="https://github.com/hhshark"
                   className="underline duration-200 ease-linear decoration-4 underline-offset-4 hover:decoration-pink-500"
                 >
-                  hexshark (Honsing)
+                  hhshark (Honsing)
                 </a>
               </div>
               <div className="flex items-center my-2">

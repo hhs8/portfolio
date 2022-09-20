@@ -2,7 +2,7 @@ import "./LandingBanner.css";
 
 function LandingBanner() {
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "40vh" }}>
       <div className="text-left text-purple-500 Landing-banner">
         Hello there
       </div>
