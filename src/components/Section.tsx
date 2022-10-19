@@ -22,11 +22,6 @@ function Section(props: SectionProp) {
     divRef.current?.scrollIntoView();
   };
 
-  const sectionClass = () => {
-    const alignment = props.index % 2 == 0 ? "float-left" : "float-right";
-    return "text-left text-2xl my-3 pt-16 " + alignment;
-  };
-
   const h1Class = () => {
     const mouseOnSection = hover ? textColors[props.index] : "";
     return (
@@ -49,7 +44,7 @@ function Section(props: SectionProp) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div ref={divRef} className={sectionClass()}>
+      <div ref={divRef} className="my-8 text-2xl text-left">
         {renderH1()}
         <div className="my-4">{props.children}</div>
       </div>

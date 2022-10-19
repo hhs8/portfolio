@@ -2,12 +2,12 @@ import "./LandingBanner.css";
 
 function LandingBanner() {
   return (
-    <div style={{ height: "40vh" }}>
+    <div className="my-16">
       <div className="text-left text-purple-500 Landing-banner">
-        Hello there
+        Hi, this is Honsing
       </div>
       <div className="text-left text-purple-500 Landing-banner">
-        This is Honsing, welcome to my site
+        Welcome to my site
       </div>
     </div>
   );
