@@ -39,12 +39,21 @@ function Section(props: SectionProp) {
     return <></>;
   };
 
+  const scrollMargin = () => {
+    const margin = window.innerWidth >= 1024 ? "90px" : "72px";
+    return { scrollMargin: margin };
+  };
+
   return (
     <section
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div ref={divRef} className="my-8 text-2xl text-left">
+      <div
+        ref={divRef}
+        className="my-8 text-2xl text-left"
+        style={scrollMargin()}
+      >
         {renderH1()}
         <div className="my-4">{props.children}</div>
       </div>
