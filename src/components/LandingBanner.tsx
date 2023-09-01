@@ -4,10 +4,10 @@ function LandingBanner() {
   return (
     <div className="my-16">
       <div className="text-left text-purple-500 Landing-banner">
-        Hi, this is Honsing
+        Coding - Computer - Coffee
       </div>
       <div className="text-left text-purple-500 Landing-banner">
-        Welcome to my site
+        A place for sharing
       </div>
     </div>
   );

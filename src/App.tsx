@@ -32,6 +32,8 @@ function App() {
             </Section>
             <Section index={0} cur={curTab}>
               <div>
+                <div className="text-4xl font-bold">HONSING</div>
+                <div className="text-xl opacity-70">Fullstack Developer</div>
                 <p className="my-4">
                   Hi, I'm Honsing, a Fullstack Software Developer based in
                   Malaysia. I studied in Computer Science. This is my personal
