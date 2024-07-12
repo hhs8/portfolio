@@ -185,16 +185,16 @@ function App() {
               <div className="flex items-center my-2">
                 <FaGithub className="mr-4 duration-200 ease-in dark:text-white text-slate-900" />
                 <a
-                  href="https://github.com/hhshark"
+                  href="https://github.com/hhs8"
                   className="underline duration-200 ease-linear decoration-4 underline-offset-4 hover:decoration-pink-500"
                 >
-                  hhshark (Honsing)
+                  hhs8 (Honsing)
                 </a>
               </div>
               <div className="flex items-center my-2">
                 <FaLinkedin className="mr-4 text-blue-600" />
                 <a
-                  href="https://www.linkedin.com/in/honsing-ho-876507233/"
+                  href="https://www.linkedin.com/in/honsing-ho/"
                   className="underline duration-200 ease-linear decoration-4 underline-offset-4 hover:decoration-indigo-500"
                 >
                   Honsing Ho
